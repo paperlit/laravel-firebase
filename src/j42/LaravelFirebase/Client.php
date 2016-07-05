@@ -96,7 +96,8 @@ class Client {
 
 		// Process Request
 		$request  = $this->http->request('GET', $path, []);
-		$response = $this->validateResponse($request)->getBody();
+		$response = json_decode((string)$this->validateResponse($request)->getBody(), true);
+		if (is_null($response)) return null;
 
 		// Is Response Valid?
 		return ($eloquentCollection) ? $this->makeCollection($response, $eloquentCollection) : $response;
