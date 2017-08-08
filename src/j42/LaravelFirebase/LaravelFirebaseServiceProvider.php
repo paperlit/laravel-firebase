@@ -23,11 +23,12 @@ class LaravelFirebaseServiceProvider extends ServiceProvider {
 
 		// Reference
 		$self = $this;
-
+/*
 		// Register Eloquent Hooks
 		Event::listen('eloquent.created: *', function($obj) use ($self) { return $self->sync($obj); }, 10);
 		Event::listen('eloquent.updated: *', function($obj) use ($self) { return $self->sync($obj); }, 10);
 		Event::listen('eloquent.deleted: *', function($obj) use ($self) { return $self->delete($obj); }, 10);
+*/
 	}
 
 
